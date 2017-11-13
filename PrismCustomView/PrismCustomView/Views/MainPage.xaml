@@ -2,10 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PrismCustomView.Views.MainPage"
+             xmlns:customViews="clr-namespace:PrismCustomView.CustomViewCells"
              Title="{Binding Title}">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+    <TableView Intent="Form">
+        <TableView.Root>
+
+            <!--Summary-->
+            <TableSection Title="Custom View Cell">
+                <customViews:TestEntryCell Label="{Binding MyLabelProperty}"
+                                           Text="{Binding MyTexProperty}"></customViews:TestEntryCell>
+
+                <customViews:TestEntryCell Label="Label 2"
+                                           Text="Hello world 2"></customViews:TestEntryCell>
+            </TableSection>
+        </TableView.Root>
+    </TableView>
 
 </ContentPage>

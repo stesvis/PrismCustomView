@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrismCustomView.CustomViewCells.TestEntryCell">
+    <ViewCell.View>
+        <StackLayout Orientation="Horizontal" Padding="13, 0">
+
+            <Label Text="{Binding Label}" 
+                   VerticalOptions="Center"></Label>
+
+            <Entry Text="{Binding Text}" 
+                   HorizontalOptions="FillAndExpand"></Entry>
+
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>
