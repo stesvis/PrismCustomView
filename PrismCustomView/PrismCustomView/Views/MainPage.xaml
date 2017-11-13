@@ -10,9 +10,16 @@
 
             <!--Summary-->
             <TableSection Title="Custom View Cell">
-                <customViews:TestEntryCell Label="{Binding MyLabelProperty}"
-                                           Text="{Binding MyTexProperty}"></customViews:TestEntryCell>
 
+                <!--Just making sure that the properties are set-->
+                <EntryCell Label="{Binding MyLabelProperty}"
+                           Text="{Binding MyTextProperty}"></EntryCell>
+                
+                <!--Now use them in my custom ViewCell-->
+                <customViews:TestEntryCell Label="{Binding MyLabelProperty}"
+                                           Text="{Binding MyTextProperty}"></customViews:TestEntryCell>
+
+                <!--Now hardcode them into my custom ViewCell-->
                 <customViews:TestEntryCell Label="Label 2"
                                            Text="Hello world 2"></customViews:TestEntryCell>
             </TableSection>
