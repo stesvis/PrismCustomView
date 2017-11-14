@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace PrismCustomView.CustomViewCells
@@ -12,7 +6,13 @@ namespace PrismCustomView.CustomViewCells
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TestEntryCell : ViewCell
     {
-        public static readonly BindableProperty LabelProperty = BindableProperty.Create(nameof(Label), typeof(string), typeof(TestEntryCell), propertyChanged: OnLabelChanged);
+        public static BindableProperty LabelProperty = BindableProperty.Create(
+            propertyName: nameof(Label),
+            returnType: typeof(string),
+            declaringType: typeof(TestEntryCell),
+            defaultValue: null,
+            defaultBindingMode: BindingMode.OneWay,
+            propertyChanged: OnLabelChanged);
 
         private static void OnLabelChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -26,7 +26,19 @@ namespace PrismCustomView.CustomViewCells
             set { SetValue(LabelProperty, value); }
         }
 
-        public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(TestEntryCell));
+        public static BindableProperty TextProperty = BindableProperty.Create(
+          propertyName: nameof(Text),
+          returnType: typeof(string),
+          declaringType: typeof(TestEntryCell),
+          defaultValue: null,
+          defaultBindingMode: BindingMode.TwoWay,
+          propertyChanged: OnTextChanged);
+
+        private static void OnTextChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var myview = bindable as TestEntryCell;
+            myview.myText.Text = newValue as string;
+        }
 
         public string Text
         {
@@ -38,7 +50,7 @@ namespace PrismCustomView.CustomViewCells
         {
             InitializeComponent();
 
-            BindingContext = this;
+            //BindingContext = this;
         }
     }
 }

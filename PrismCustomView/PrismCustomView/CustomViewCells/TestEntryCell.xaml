@@ -5,11 +5,9 @@
     <ViewCell.View>
         <StackLayout Orientation="Horizontal" Padding="13, 0">
 
-            <Label x:Name="myLabel" Text="{Binding Label}" 
-                   VerticalOptions="Center"></Label>
+            <Label x:Name="myLabel"  VerticalOptions="Center"></Label>
 
-            <Entry Text="{Binding Text}" 
-                   HorizontalOptions="FillAndExpand"></Entry>
+            <Entry x:Name="myText" HorizontalOptions="FillAndExpand"></Entry>
 
         </StackLayout>
     </ViewCell.View>
