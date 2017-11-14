@@ -12,7 +12,13 @@ namespace PrismCustomView.CustomViewCells
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TestEntryCell : ViewCell
     {
-        public static readonly BindableProperty LabelProperty = BindableProperty.Create(nameof(Label), typeof(string), typeof(TestEntryCell));
+        public static readonly BindableProperty LabelProperty = BindableProperty.Create(nameof(Label), typeof(string), typeof(TestEntryCell), propertyChanged: OnLabelChanged);
+
+        private static void OnLabelChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var myview = bindable as TestEntryCell;
+            myview.myLabel.Text = newValue as string;
+        }
 
         public string Label
         {

@@ -5,7 +5,7 @@
     <ViewCell.View>
         <StackLayout Orientation="Horizontal" Padding="13, 0">
 
-            <Label Text="{Binding Label}" 
+            <Label x:Name="myLabel" Text="{Binding Label}" 
                    VerticalOptions="Center"></Label>
 
             <Entry Text="{Binding Text}" 
