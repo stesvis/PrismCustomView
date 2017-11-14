@@ -24,10 +24,10 @@
                 </customViews:TestEntryCell>
 
                 <!--Now hardcode them into my custom ViewCell-->
-                <!--<customViews:TestEntryCell Label="Label 2"
+                <customViews:TestEntryCell Label="Label 2"
                                            Text="Hello world 2">
                     
-                </customViews:TestEntryCell>-->
+                </customViews:TestEntryCell>
             </TableSection>
         </TableView.Root>
     </TableView>
